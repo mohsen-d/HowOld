@@ -118,7 +118,7 @@ class Search extends React.Component{
       <div id="searchForm">
         <form onSubmit={this.handleSubmit}>
           <label className={this.state.hasFocus? "show": ""}>Movie title</label>
-          <input type="text" placeholder={this.state.hasFocus? "" : "Type the title of the movie here"} value={this.props.value} onFocus={() => this.handleFocus(true)} onBlur={() => this.handleFocus(false)} onChange={this.handleChange} />&nbsp;
+          <input type="text" disabled={this.props.connecting ? "disabled" : ""} placeholder={this.state.hasFocus? "" : "Type the title of the movie here"} value={this.props.value} onFocus={() => this.handleFocus(true)} onBlur={() => this.handleFocus(false)} onChange={this.handleChange} />&nbsp;
           <input type="submit" />
           <div className={this.props.value.length > 0 ? "show": ""} id="msg">{this.props.connecting ? <img src="/loader.gif" alt="please wait ..." /> : "enter the title and hit enter key"}</div>
         </form>

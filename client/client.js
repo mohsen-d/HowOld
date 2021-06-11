@@ -182,7 +182,7 @@ var Search = function (_React$Component2) {
             { className: this.state.hasFocus ? "show" : "" },
             'Movie title'
           ),
-          React.createElement('input', { type: 'text', placeholder: this.state.hasFocus ? "" : "Type the title of the movie here", value: this.props.value, onFocus: function onFocus() {
+          React.createElement('input', { type: 'text', disabled: this.props.connecting ? "disabled" : "", placeholder: this.state.hasFocus ? "" : "Type the title of the movie here", value: this.props.value, onFocus: function onFocus() {
               return _this4.handleFocus(true);
             }, onBlur: function onBlur() {
               return _this4.handleFocus(false);
