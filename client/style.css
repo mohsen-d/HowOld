@@ -6,6 +6,9 @@ body{
 input{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+a{
+    text-decoration: none;
+}
 .center {
     margin: 0;
     position: relative;
@@ -284,4 +287,24 @@ input[type='submit']{
 #back.hide{
     left: -100px;
     transition-delay: 0s;
+}
+#footer{
+    position: absolute;
+    bottom: 15px;
+    width: 50%;
+    font-size: .7em;
+    text-align: center;
+    transition: color .5s;
+    transition-delay: 2.5s;
+}
+#footer a{
+    transition: color .5s;
+    transition-delay: 2.5s;
+}
+
+#footer.light, #footer.light a, #footer.light a:visited{
+    color: #c7c7c7;
+}
+#footer.dark, #footer.dark a, #footer.dark a:visited{
+    color: #555;
 }

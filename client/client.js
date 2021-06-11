@@ -46,39 +46,41 @@ var App = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
-      var _this2 = this;
 
-      /*var result = {"movie":{"name":"WAR OF THE WORLDS","year":"2004","poster":"https://m.media-amazon.com/images/M/MV5BMTk5MzU1MDMwMF5BMl5BanBnXkFtZTcwNjczODMzMw@@._V1_QL75_UY400_CR0,0,270,400_.jpg"},"actors":[{"name":"Brad Pitt","img":"https://m.media-amazon.com/images/M/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_QL75_UX200_CR0,12,200,200_.jpg","bYear":"1963","age":41},{"name":"Eric Bana","img":"https://m.media-amazon.com/images/M/MV5BNzM4MjY5YjctMWQzNy00MjczLTg1MGMtOTIxZWU4NGVmMWQyXkEyXkFqcGdeQXVyNzAxOTAyMDc@._V1_QL75_UX200_CR0,12,200,200_.jpg","bYear":"1968","age":36},{"name":"Orlando Bloom","img":"https://m.media-amazon.com/images/M/MV5BMjE1MDkxMjQ3NV5BMl5BanBnXkFtZTcwMzQ3Mjc4MQ@@._V1_QL75_UX200_CR0,3,200,200_.jpg","bYear":"1977","age":27},{"name":"Julian Glover","img":"https://m.media-amazon.com/images/M/MV5BMjA4MDg3MjA2NV5BMl5BanBnXkFtZTcwNjAxNzczNA@@._V1_QL75_UX200_CR0,0,200,200_.jpg","bYear":"1935","age":69},{"name":"Brian Cox","img":"https://m.media-amazon.com/images/M/MV5BMTcyNzg4MzIwNl5BMl5BanBnXkFtZTcwNTI1NjYyMQ@@._V1_QL75_UX200_CR0,5,200,200_.jpg","bYear":"1946","age":58},{"name":"Nathan Jones The Third Big Dude","img":"https://m.media-amazon.com/images/M/MV5BNWNkOGY2NTMtMDUzMi00NmQ1LTk3ZjItMTljYWY1NWJlNTJiXkEyXkFqcGdeQXVyMTAwNTEwNTE4._V1_QL75_UX200_CR0,0,200,200_.jpg","bYear":"1969","age":35}]}
+      var result = { "movie": { "name": "WAR OF THE WORLDS", "year": "2004", "poster": "https://m.media-amazon.com/images/M/MV5BMTk5MzU1MDMwMF5BMl5BanBnXkFtZTcwNjczODMzMw@@._V1_QL75_UY400_CR0,0,270,400_.jpg" }, "actors": [{ "name": "Brad Pitt", "img": "https://m.media-amazon.com/images/M/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_QL75_UX200_CR0,12,200,200_.jpg", "bYear": "1963", "age": 41 }, { "name": "Eric Bana", "img": "https://m.media-amazon.com/images/M/MV5BNzM4MjY5YjctMWQzNy00MjczLTg1MGMtOTIxZWU4NGVmMWQyXkEyXkFqcGdeQXVyNzAxOTAyMDc@._V1_QL75_UX200_CR0,12,200,200_.jpg", "bYear": "1968", "age": 36 }, { "name": "Orlando Bloom", "img": "https://m.media-amazon.com/images/M/MV5BMjE1MDkxMjQ3NV5BMl5BanBnXkFtZTcwMzQ3Mjc4MQ@@._V1_QL75_UX200_CR0,3,200,200_.jpg", "bYear": "1977", "age": 27 }, { "name": "Julian Glover", "img": "https://m.media-amazon.com/images/M/MV5BMjA4MDg3MjA2NV5BMl5BanBnXkFtZTcwNjAxNzczNA@@._V1_QL75_UX200_CR0,0,200,200_.jpg", "bYear": "1935", "age": 69 }, { "name": "Brian Cox", "img": "https://m.media-amazon.com/images/M/MV5BMTcyNzg4MzIwNl5BMl5BanBnXkFtZTcwNTI1NjYyMQ@@._V1_QL75_UX200_CR0,5,200,200_.jpg", "bYear": "1946", "age": 58 }, { "name": "Nathan Jones The Third Big Dude", "img": "https://m.media-amazon.com/images/M/MV5BNWNkOGY2NTMtMDUzMi00NmQ1LTk3ZjItMTljYWY1NWJlNTJiXkEyXkFqcGdeQXVyMTAwNTEwNTE4._V1_QL75_UX200_CR0,0,200,200_.jpg", "bYear": "1969", "age": 35 }] };
       this.setState({
         movie: result.movie,
         actors: result.actors,
         error: '',
         query: '',
         successfullSearch: true
-      });*/
-
-      this.setState({ connecting: true });
-
-      var data = { movie: this.state.query };
-      axios({
-        method: 'post',
-        url: '/search',
-        data: data
-      }).then(function (result) {
-        _this2.setState({
-          movie: result.data.movie,
-          actors: result.data.actors,
-          error: '',
-          query: '',
-          connecting: false,
-          successfullSearch: true
-        });
-      }, function (error) {
-        _this2.setState({
-          error: error.response.data,
-          connecting: false
-        });
       });
+
+      /*this.setState({connecting: true});
+        var data = {movie: this.state.query};
+      axios({
+          method: 'post',
+          url: '/search',
+          data: data
+        })
+        .then(
+          (result) => {
+            this.setState({
+              movie: result.data.movie,
+              actors: result.data.actors,
+              error: '',
+              query: '',
+              connecting: false,
+              successfullSearch: true
+            });
+          },
+          (error) => {
+            this.setState({
+              error: error.response.data,
+              connecting: false
+            });
+          }
+        )*/
     }
   }, {
     key: 'render',
@@ -114,7 +116,17 @@ var App = function (_React$Component) {
             React.createElement(Search, { connecting: this.state.connecting, value: this.state.query, onChange: this.handleChange, onClick: this.handleSubmit })
           )
         ),
-        React.createElement(SearchResult, { onBackBtnClick: this.handleBackBtn, successfullSearch: this.state.successfullSearch, disabled: this.state.connecting, movie: this.state.movie, actors: this.state.actors })
+        React.createElement(SearchResult, { onBackBtnClick: this.handleBackBtn, successfullSearch: this.state.successfullSearch, disabled: this.state.connecting, movie: this.state.movie, actors: this.state.actors }),
+        React.createElement(
+          'div',
+          { id: 'footer', className: this.state.successfullSearch ? "light" : "dark" },
+          '2021 \xA9 ',
+          React.createElement(
+            'a',
+            { href: 'https://github.com/mohsen-d' },
+            'Mohsen Dorparasti'
+          )
+        )
       );
     }
   }]);
@@ -128,16 +140,16 @@ var Search = function (_React$Component2) {
   function Search(props) {
     _classCallCheck(this, Search);
 
-    var _this3 = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
+    var _this2 = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
 
-    _this3.state = {
+    _this2.state = {
       hasFocus: false
     };
 
-    _this3.handleSubmit = _this3.handleSubmit.bind(_this3);
-    _this3.handleChange = _this3.handleChange.bind(_this3);
-    _this3.handleFocus = _this3.handleFocus.bind(_this3);
-    return _this3;
+    _this2.handleSubmit = _this2.handleSubmit.bind(_this2);
+    _this2.handleChange = _this2.handleChange.bind(_this2);
+    _this2.handleFocus = _this2.handleFocus.bind(_this2);
+    return _this2;
   }
 
   _createClass(Search, [{
@@ -159,7 +171,7 @@ var Search = function (_React$Component2) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       return React.createElement(
         'div',
@@ -173,9 +185,9 @@ var Search = function (_React$Component2) {
             'Movie title'
           ),
           React.createElement('input', { type: 'text', placeholder: this.state.hasFocus ? "" : "Type the title of the movie here", value: this.props.value, onFocus: function onFocus() {
-              return _this4.handleFocus(true);
+              return _this3.handleFocus(true);
             }, onBlur: function onBlur() {
-              return _this4.handleFocus(false);
+              return _this3.handleFocus(false);
             }, onChange: this.handleChange }),
           '\xA0',
           React.createElement('input', { type: 'submit' }),
@@ -294,12 +306,12 @@ var ActorInfo = function (_React$Component6) {
   function ActorInfo(props) {
     _classCallCheck(this, ActorInfo);
 
-    var _this8 = _possibleConstructorReturn(this, (ActorInfo.__proto__ || Object.getPrototypeOf(ActorInfo)).call(this, props));
+    var _this7 = _possibleConstructorReturn(this, (ActorInfo.__proto__ || Object.getPrototypeOf(ActorInfo)).call(this, props));
 
-    _this8.states = {
+    _this7.states = {
       nameHeight: 36
     };
-    return _this8;
+    return _this7;
   }
 
   _createClass(ActorInfo, [{
@@ -319,15 +331,15 @@ var ActorInfo = function (_React$Component6) {
   }, {
     key: 'render',
     value: function render() {
-      var _this9 = this;
+      var _this8 = this;
 
       var actor = this.props.actor;
       return React.createElement(
         'div',
         { className: 'actor', onMouseOver: function onMouseOver(e) {
-            return _this9.handleHover(e, "in");
+            return _this8.handleHover(e, "in");
           }, onMouseOut: function onMouseOut(e) {
-            return _this9.handleHover(e, "out");
+            return _this8.handleHover(e, "out");
           } },
         React.createElement(
           'div',
