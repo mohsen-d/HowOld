@@ -1,0 +1,21 @@
+{
+  "name": "howold",
+  "version": "1.0.0",
+  "description": "HowOld app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mohsen dorparasti",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.0",
+    "axios": "^0.21.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "express": "^4.17.1",
+    "urllib": "^2.37.1",
+    "xmldom": "^0.6.0",
+    "xpath": "0.0.32"
+  }
+}
