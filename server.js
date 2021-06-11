@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 app.use(express.static('client'));
 app.use(bodyParser.json());
-const port = 8000;
+
 
 const domOptions = {
     locator: {},
@@ -229,6 +229,11 @@ app.post('/search', function(req, res) {
     getTheSearchPage(res, movieName);
 });
 
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 app.listen(port, () => {
   console.log(`HowOld is listening on port ${port}!`)
 });
