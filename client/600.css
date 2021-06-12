@@ -1,0 +1,64 @@
+@media only screen and (max-width: 600px) {
+    h1{
+        margin: 0 auto 10px;
+        text-align: left;
+        width: 90%;
+    }
+    #searchBox{
+        width: 100%;
+    }
+    #searchForm{
+        overflow:visible;
+    }
+    form{
+        width: 90%;
+        margin: auto;
+        text-align: left;
+        position: relative
+    }
+    #searchForm label{
+        top: 0;
+        left: 0;
+        transition: top .3s;
+        display: block;
+        position:absolute;
+    }
+    #searchForm label.show{
+        top: 48px;
+    }
+    input[type='text']{
+        width: 100%;
+        text-align: left;
+    }
+    #msg{
+        width: 100%;
+        top: -48px;
+        transition: top .2s;
+        padding: 10px 0;
+    }
+    #msg.show{
+        top: 0;
+    }
+    #searchResult{
+        overflow-y: scroll;
+    }
+    #results{
+        width: 80%;        
+        top: 10%;
+    }
+    #movieInfo{
+        display: block;
+        width: 100%;
+    }
+    #moviePoster img{
+        width: 100%;
+    }
+    #actors{
+        display: block;
+        width: 100%;
+        z-index: 1;
+    }
+    .actor{
+        width: 33.3333%;
+    }
+}
