@@ -4,6 +4,9 @@
         text-align: left;
         width: 90%;
     }
+    #content{
+        overflow-y: scroll;
+    }
     #searchBox{
         width: 100%;
     }
@@ -42,13 +45,22 @@
     #searchResult{
         overflow-y: scroll;
     }
+    #searchBg{
+        min-height: 150%;
+    }
     #results{
-        width: 80%;        
-        top: 10%;
+        width: 80%;
+        top: 7%;
+        position: relative;
+        margin: auto;
     }
     #movieInfo{
         display: block;
         width: 100%;
+    }
+    #movieInfo h2{
+        position: relative;
+        top: 0;
     }
     #moviePoster img{
         width: 100%;
@@ -59,6 +71,33 @@
         z-index: 1;
     }
     .actor{
-        width: 33.3333%;
+        width: 50%;
+    }
+    #back{
+        top: -50px;
+        left: 0;
+        height: 50px;
+        width: 100%;
+        transition: top .2s;
+        transition-delay: 2.2s;
+    }
+    #back::after{
+        transition: background-color .3s, top .3s, height .3s;
+    }
+    #back:hover::after,#back:focus::after{    
+        background-color: #b3143c;
+        height: 60px;
+        left: 0;
+    }
+    #back.show{
+        top: 0;
+    }
+    #back.hide{
+        top: -50px;
+        left: 0;
+    }
+    #footer{
+        position: relative;
+        bottom: 0;
     }
 }

@@ -88,6 +88,12 @@ var App = function (_React$Component) {
       return React.createElement(
         'div',
         { id: 'wrapper' },
+        React.createElement('div', { id: 'searchBg', className: this.state.successfullSearch ? "show" : "hide", style: { backgroundImage: "url(" + this.state.movie.poster + ")" } }),
+        React.createElement(
+          'div',
+          { id: 'back', onClick: this.handleBackBtn, className: this.state.successfullSearch ? "show" : "hide" },
+          '\xA0'
+        ),
         React.createElement(
           'div',
           { id: 'search', className: this.state.successfullSearch ? "hide" : "show" },
@@ -222,12 +228,6 @@ var SearchResult = function (_React$Component3) {
       return React.createElement(
         'div',
         { id: 'searchResult', className: this.props.successfullSearch ? "show" : "hide" },
-        React.createElement('div', { id: 'searchBg', className: this.props.successfullSearch ? "show" : "hide", style: { backgroundImage: "url(" + this.props.movie.poster + ")" } }),
-        React.createElement(
-          'div',
-          { id: 'back', onClick: this.props.onBackBtnClick, className: this.props.successfullSearch ? "show" : "hide" },
-          '\xA0'
-        ),
         React.createElement(
           'div',
           { id: 'results', className: this.props.successfullSearch ? "show" : "hide" },

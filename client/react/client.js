@@ -71,7 +71,9 @@ class App extends React.Component{
 
   render(){
     return(
-      <div id="wrapper">
+      <div id="wrapper">        
+        <div id="searchBg" className={this.state.successfullSearch ? "show" : "hide"} style={{backgroundImage : "url(" + this.state.movie.poster + ")"}}></div>
+        <div id="back" onClick={this.handleBackBtn} className={this.state.successfullSearch ? "show" : "hide"}>&nbsp;</div>
         <div id="search" className={this.state.successfullSearch ? "hide" : "show"}>
           <div id="searchBox" className={this.state.successfullSearch ? "hide" : "show"}>
             <h1><span id="how">HOW</span><span id="old">OLD</span></h1>
@@ -139,8 +141,6 @@ class SearchResult extends React.Component{
 
     return(
       <div id="searchResult" className={this.props.successfullSearch ? "show" : "hide"}>
-        <div id="searchBg" className={this.props.successfullSearch ? "show" : "hide"} style={{backgroundImage : "url(" + this.props.movie.poster + ")"}}></div>
-        <div id="back" onClick={this.props.onBackBtnClick} className={this.props.successfullSearch ? "show" : "hide"}>&nbsp;</div>
         <div id="results"  className={this.props.successfullSearch ? "show" : "hide"}>
           <MovieInfo movie={this.props.movie} />
           <ActorsInfo actors={this.props.actors} />
