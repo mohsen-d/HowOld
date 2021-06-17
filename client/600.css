@@ -28,12 +28,7 @@
     }
     #wrapper{
         flex: 0 0 200%;
-        align-self: stretch;
         display: flex;
-        flex-direction: row;
-    }
-    #wrapper.extend{
-        align-self: flex-start;
     }
     #searchBg{
         position: absolute;
@@ -69,11 +64,18 @@
         height: 100%;
         background-color: rgb(36, 40, 43, 0.8);
     }
+    #mainContent{
+        flex: 0 0 100%;
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+    }
     #search{
         flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         position: relative;
         left: 0;
         transition: left 1.6s;
@@ -89,7 +91,7 @@
     }
     #searchBox{
         transition: transform .4s, filter .4s;
-        flex: 100%;
+        width: 100%;
     }
     #searchBox.hide{
         transform: scale(.8);
@@ -301,13 +303,12 @@
         transition-delay: 0s;
     }
     #footer{
-        position: absolute;
-        bottom: 0;
-        width: 50%;
+        position: relative;
         font-size: .7em;
         text-align: center;
         transition: color .5s;
         transition-delay: 2.5s;
+        margin: 50px 0;
     }
     #footer a{
         transition: color .5s;
@@ -319,5 +320,9 @@
     }
     #footer.dark, #footer.dark a, #footer.dark a:visited{
         color: #555;
+    }
+    #footer.dark{        
+        position: absolute;
+        bottom: 0;
     }
 }

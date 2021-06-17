@@ -30,17 +30,17 @@ class App extends React.Component{
 
   handleSubmit(e){
     
-    var result = {"movie":{"name":"WAR OF THE WORLDS","year":"2004","poster":"https://m.media-amazon.com/images/M/MV5BMTk5MzU1MDMwMF5BMl5BanBnXkFtZTcwNjczODMzMw@@._V1_QL75_UY400_CR0,0,270,400_.jpg"},"actors":[{"name":"Brad Pitt","img":"https://m.media-amazon.com/images/M/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_QL75_UX200_CR0,12,200,200_.jpg","bYear":"1963","age":41},{"name":"Eric Bana","img":"https://m.media-amazon.com/images/M/MV5BNzM4MjY5YjctMWQzNy00MjczLTg1MGMtOTIxZWU4NGVmMWQyXkEyXkFqcGdeQXVyNzAxOTAyMDc@._V1_QL75_UX200_CR0,12,200,200_.jpg","bYear":"1968","age":36},{"name":"Orlando Bloom","img":"https://m.media-amazon.com/images/M/MV5BMjE1MDkxMjQ3NV5BMl5BanBnXkFtZTcwMzQ3Mjc4MQ@@._V1_QL75_UX200_CR0,3,200,200_.jpg","bYear":"1977","age":27},{"name":"Julian Glover","img":"https://m.media-amazon.com/images/M/MV5BMjA4MDg3MjA2NV5BMl5BanBnXkFtZTcwNjAxNzczNA@@._V1_QL75_UX200_CR0,0,200,200_.jpg","bYear":"1935","age":69},{"name":"Brian Cox","img":"https://m.media-amazon.com/images/M/MV5BMTcyNzg4MzIwNl5BMl5BanBnXkFtZTcwNTI1NjYyMQ@@._V1_QL75_UX200_CR0,5,200,200_.jpg","bYear":"1946","age":58},{"name":"Nathan Jones The Third Big Dude","img":"https://m.media-amazon.com/images/M/MV5BNWNkOGY2NTMtMDUzMi00NmQ1LTk3ZjItMTljYWY1NWJlNTJiXkEyXkFqcGdeQXVyMTAwNTEwNTE4._V1_QL75_UX200_CR0,0,200,200_.jpg","bYear":"1969","age":35}]}
+    /*var result = {"movie":{"name":"WAR OF THE WORLDS","year":"2004","poster":"https://m.media-amazon.com/images/M/MV5BMTk5MzU1MDMwMF5BMl5BanBnXkFtZTcwNjczODMzMw@@._V1_QL75_UY400_CR0,0,270,400_.jpg"},"actors":[{"name":"Brad Pitt","img":"https://m.media-amazon.com/images/M/MV5BMjA1MjE2MTQ2MV5BMl5BanBnXkFtZTcwMjE5MDY0Nw@@._V1_QL75_UX200_CR0,12,200,200_.jpg","bYear":"1963","age":41},{"name":"Eric Bana","img":"https://m.media-amazon.com/images/M/MV5BNzM4MjY5YjctMWQzNy00MjczLTg1MGMtOTIxZWU4NGVmMWQyXkEyXkFqcGdeQXVyNzAxOTAyMDc@._V1_QL75_UX200_CR0,12,200,200_.jpg","bYear":"1968","age":36},{"name":"Orlando Bloom","img":"https://m.media-amazon.com/images/M/MV5BMjE1MDkxMjQ3NV5BMl5BanBnXkFtZTcwMzQ3Mjc4MQ@@._V1_QL75_UX200_CR0,3,200,200_.jpg","bYear":"1977","age":27},{"name":"Julian Glover","img":"https://m.media-amazon.com/images/M/MV5BMjA4MDg3MjA2NV5BMl5BanBnXkFtZTcwNjAxNzczNA@@._V1_QL75_UX200_CR0,0,200,200_.jpg","bYear":"1935","age":69},{"name":"Brian Cox","img":"https://m.media-amazon.com/images/M/MV5BMTcyNzg4MzIwNl5BMl5BanBnXkFtZTcwNTI1NjYyMQ@@._V1_QL75_UX200_CR0,5,200,200_.jpg","bYear":"1946","age":58},{"name":"Nathan Jones The Third Big Dude","img":"https://m.media-amazon.com/images/M/MV5BNWNkOGY2NTMtMDUzMi00NmQ1LTk3ZjItMTljYWY1NWJlNTJiXkEyXkFqcGdeQXVyMTAwNTEwNTE4._V1_QL75_UX200_CR0,0,200,200_.jpg","bYear":"1969","age":35}]}
     this.setState({
       movie: result.movie,
       actors: result.actors,
       error: '',
       query: '',
       successfullSearch: true
-    });
+    });*/
 
     
-    /*this.setState({connecting: true});
+    this.setState({connecting: true});
 
     var data = {movie: this.state.query};
     axios({
@@ -65,25 +65,28 @@ class App extends React.Component{
             connecting: false
           });
         }
-      )*/
+      )
   }
 
 
 
   render(){
     return(
-      <div id="wrapper">        
+      <div id="wrapper">
         <div id="searchBg" className={this.state.successfullSearch ? "show" : "hide"} style={{backgroundImage : "url(" + this.state.movie.poster + ")"}}></div>
         <div id="back" onClick={this.handleBackBtn} className={this.state.successfullSearch ? "show" : "hide"}>&nbsp;</div>
-        <div id="search" className={this.state.successfullSearch ? "hide" : "show"}>
-          <div id="searchBox" className={this.state.successfullSearch ? "hide" : "show"}>
-            <h1><span id="how">HOW</span><span id="old">OLD</span></h1>
-            <div id="error">{this.state.error}</div>
-            <Search connecting={this.state.connecting} value={this.state.query} onChange={this.handleChange} onClick={this.handleSubmit} />
+        <div id="mainContent">
+          <div id="search" className={this.state.successfullSearch ? "hide" : "show"}>
+            <div id="searchBox" className={this.state.successfullSearch ? "hide" : "show"}>
+              <h1><span id="how">HOW</span><span id="old">OLD</span></h1>
+              <div id="error">{this.state.error}</div>
+              <Search connecting={this.state.connecting} value={this.state.query} onChange={this.handleChange} onClick={this.handleSubmit} />
+            </div>
+            <Footer theme="dark" />
           </div>
+          <SearchResult onBackBtnClick={this.handleBackBtn} successfullSearch={this.state.successfullSearch} movie={this.state.movie} actors={this.state.actors} />
         </div>
-        <SearchResult onBackBtnClick={this.handleBackBtn} successfullSearch={this.state.successfullSearch} movie={this.state.movie} actors={this.state.actors} />
-        <div id="footer" className={this.state.successfullSearch ? "light" : "dark"}>2021 &copy; <a href="https://github.com/mohsen-d">Mohsen Dorparasti</a></div>
+        
       </div>
     );
   }
@@ -126,6 +129,7 @@ class Search extends React.Component{
           <div className={this.props.value.length > 0 ? "show": ""} id="msg">{this.props.connecting ? <img src="/loader.gif" alt="please wait ..." /> : "enter the title and hit enter key"}</div>
         </form>
       </div>
+      
     );
   }
 }
@@ -136,17 +140,14 @@ class SearchResult extends React.Component{
   }
 
   render(){
-    /*if(!this.props.successfullSearch){
-      return null;
-    }*/
-
+    
     return(
       <div id="searchResult" className={this.props.successfullSearch ? "show" : "hide"}>
         <div id="results"  className={this.props.successfullSearch ? "show" : "hide"}>
           <MovieInfo movie={this.props.movie} />
           <ActorsInfo actors={this.props.actors} />
         </div>
-        <div className="clear"></div>
+        <Footer theme="light" />
       </div>
     );
   }
@@ -218,6 +219,11 @@ class ActorInfo extends React.Component{
       </div>
     );
   }
+}
+
+function Footer(props){
+  return  <div id="footer" className={props.theme}>2021 &copy; <a href="https://github.com/mohsen-d">Mohsen Dorparasti</a></div>
+
 }
 
 const domContainer = document.querySelector('#content');
