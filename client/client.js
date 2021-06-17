@@ -233,7 +233,8 @@ var SearchResult = function (_React$Component3) {
           { id: 'results', className: this.props.successfullSearch ? "show" : "hide" },
           React.createElement(MovieInfo, { movie: this.props.movie }),
           React.createElement(ActorsInfo, { actors: this.props.actors })
-        )
+        ),
+        React.createElement('div', { className: 'clear' })
       );
     }
   }]);

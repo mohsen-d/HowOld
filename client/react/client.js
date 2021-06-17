@@ -38,6 +38,7 @@ class App extends React.Component{
       query: '',
       successfullSearch: true
     });
+
     
     /*this.setState({connecting: true});
 
@@ -145,6 +146,7 @@ class SearchResult extends React.Component{
           <MovieInfo movie={this.props.movie} />
           <ActorsInfo actors={this.props.actors} />
         </div>
+        <div className="clear"></div>
       </div>
     );
   }
